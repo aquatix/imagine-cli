@@ -1,7 +1,4 @@
-# imagine_core
-peewee
-# imagine_web
-Flask
+imagine-core
 # imagine_cli
 click
 # imagine
