@@ -5,6 +5,7 @@ import sys
 import click
 #from imagine_core import *
 import imagine_core
+from imagine_core import Collection, Directory, Image, ExifItem, Event
 from utilkit import fileutil
 from PIL import Image as PILImage, ImageFile as PILImageFile, ExifTags
 import exifread
@@ -83,7 +84,7 @@ def save_image_info(directory, the_image, filename, file_ext):
     the_image.filesize = os.stat(filename).st_size
     the_image.save()
 
-    if file_ext not in IMAGE_EXTENSIONS_RAW:
+    if file_ext not in imagine_core.IMAGE_EXTENSIONS_RAW:
         try:
             image = PILImage.open(filename)
             the_image.image_hash = imagehash.average_hash(image)
@@ -161,7 +162,7 @@ def walk_archive(collection, images_dir, archive_dir):
             this_file, this_file_ext = get_filename(images_dir, os.path.join(dirname, filename))
             this_file = this_file.replace(this_dir, '')
             #logger.debug('ext: {0}'.format(this_file_ext)
-            if this_file_ext in IMAGE_EXTENSIONS:
+            if this_file_ext in imagine_core.IMAGE_EXTENSIONS:
                 the_image, created = Image.get_or_create(
                     directory=directory,
                     filename=filename,
