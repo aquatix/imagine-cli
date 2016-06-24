@@ -3,7 +3,8 @@ import logging
 import os
 import sys
 import click
-from imagine_core import *
+#from imagine_core import *
+import imagine_core
 from utilkit import fileutil
 from PIL import Image as PILImage, ImageFile as PILImageFile, ExifTags
 import exifread
@@ -210,14 +211,11 @@ def update_archive(inputdir, archivedir):
     if os.path.exists(db_file):
         should_create = False
 
-    imagine.database = imagine.SqliteDatabase(db_file)
-    imagine.BaseModel.database = imagine.database
-
-    imagine.init_db(db_file)
+    imagine_core.init_db(db_file)
     if should_create:
-        imagine.create_archive()
+        imagine_core.create_archive()
 
-    imagine.update_collection('test', 'test-slug', inputdir, archivedir)
+    update_collection('test', 'test-slug', inputdir, archivedir)
 
 
 if __name__ == '__main__':
