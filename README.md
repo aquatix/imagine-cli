@@ -1,10 +1,11 @@
-imagine-crawl
-=============
+imagine-cli
+===========
 
 Image catalog: make archives of photographs more accessible.
 
-This is the crawler, which creates and updates archives (or galleries, if you
-wish). It builds on top of [imagine-core](https://github.com/aquatix/imagine-core),
+This is the command-line-interface, crawler/updater, which creates and updates
+archives (or galleries, if you wish) and provides ways of building collections.
+It builds on top of [imagine-core](https://github.com/aquatix/imagine-core),
 which contains the models. A web frontend (or gallery) is available as
 [imagine-web](https://github.com/aquatix/imagine-web).
 

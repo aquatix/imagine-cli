@@ -16,8 +16,8 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='imagine-crawler', # pip install imagine-crawler
-    description='imagine image archive, crawler/updater',
+    name='imagine-cli', # pip install imagine-cli
+    description='imagine image archive, command-line-interface, crawler/updater',
     #long_description=open('README.md', 'rt').read(),
     long_description=long_description,
 
@@ -29,7 +29,7 @@ setup(
     author='Michiel Scholten',
     author_email='michiel@diginaut.net',
 
-    url='https://github.com/aquatix/imagine-crawler',
+    url='https://github.com/aquatix/imagine-cli',
     license='Apache',
 
     # as a practice no need to hard code version unless you know program wont
@@ -37,7 +37,7 @@ setup(
     install_requires=['Pillow', 'click', 'utilkit>=0.3.0'],
     # Flask for web
 
-    py_modules=['imagine-crawler'],
+    py_modules=['imagine-cli'],
 
     zip_safe=True,
 )
