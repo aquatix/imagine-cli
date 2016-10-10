@@ -31,18 +31,6 @@ lh.setFormatter(formatter)
 logger.addHandler(lh)
 
 
-def prt(messageType, message):
-    if DEBUG == False:
-        return
-
-    if messageType == 'i':
-        print '[Info] {0}'.format(message)
-    elif messageType == 'e':
-        print '[Error] {0}'.format(message)
-    elif messageType == 'd':
-        print '[Debug] {0}'.format(message)
-
-
 def get_filename(directory, filename):
     """Return (filename, extension) of the file in filename"""
 
